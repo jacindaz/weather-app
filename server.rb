@@ -3,10 +3,12 @@ require 'json'
 require 'net/http'
 require 'nokogiri'
 require 'open-uri'
+require 'pry'
 
 
 #CLASSES and METHODS----------------------------------------------------------------------------
 require_relative 'models/open_weather_maps'
+
 
 
 def today_date
@@ -18,7 +20,9 @@ end
 
 get '/' do
 
+
   @title = "Check the Weather!"
+
 
   if params[:query] == nil
     @city = "Cambridge"
