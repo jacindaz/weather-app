@@ -1,0 +1,63 @@
+<form action="/dashboard" method="get">
+  <label for="query">Please enter your city and state:</label>
+  <input type="text" name="query" id="query" />
+  <input type="submit" value="Search" />
+</form>
+
+<h4>Right now in <%= @city %></h4>
+<table class="table-bordered table-responsive image_saturation" background="/images/weather_map.png">
+  <th class="header_width" rowspan="4">
+      <img src="<%= @current_weather_hash[:icon_url] %>">
+      <h2><%= @current_weather_hash[:current_weather] %> &#176; F</h2>
+  </th>
+  <th class="dashboard"><h4>High</h4></th>
+  <th class="dashboard"><h4>Low</h4></th>
+  <tr>
+    <td class="dashboard temperature"><%= @current_weather_hash[:high] %></td>
+    <td class="dashboard temperature"><%= @current_weather_hash[:low] %></td>
+  </tr>
+  <tr>
+    <td class="dashboard" colspan=2><h4><%= @current_weather_hash[:description] %></h4></td>
+  </tr>
+</table>
+
+<br><br>
+
+
+<h4><%= @city %> 7-Day Weather Forecast</h4>
+<table class="table-bordered table-responsive image_saturation" background="/images/weather_map.png">
+
+  <% 7.times do %>
+      <th class="weather_forecast">
+        <span class="weather_header_text"><%= @date.strftime('%a') %></span>
+        <br>
+        <span class="weather_subheader_text">(<%= @date.strftime('%B %d') %>)</span>
+
+      </th>
+      <% @date += 1 %>
+  <% end %>
+
+  <tr>
+    <% @icon_url_array.each do |url| %>
+      <td><center><img src="<%= url %>"></center></td>
+    <% end %>
+  </tr>
+
+  <tr>
+    <% @temp_array.each do |day_hash| %>
+      <td class="weather_forecast temperature">
+        <span class="weather_header_text"><%= day_hash[:max] %>  &#176; F</span><br>
+        <span class="weather_subheader_text"><%= day_hash[:min] %></span>
+      </td>
+    <% end %>
+  </tr>
+</table>
+
+
+
+
+
+
+
+</body>
+</html>

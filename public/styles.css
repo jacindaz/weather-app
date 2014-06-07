@@ -1,0 +1,63 @@
+.float-left { float:left; }
+.float-right { float:right; }
+
+.padding { padding: 5px;}
+
+
+.image-left {
+  float:left;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.logo_img_left {
+  float:left;
+  padding: 10px;
+  padding-top: 0px;
+}
+
+.image-right {
+  float:right;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.dashboard {
+  width: 75px;
+  text-align: center;
+}
+
+.news_dashboard {
+  width: 300px;
+}
+
+.weather_forecast {
+  width: 75px;
+  text-align:center;
+  padding:10px 10px;
+}
+
+.temperature {
+  font-size: 16px;
+}
+
+.header_width { width: 150px; }
+
+.dashboard_underline { text-decoration: underline; }
+
+.table_styles {
+  padding: 15px;
+}
+
+td {
+  padding: 5px 15px;
+}
+
+.image_saturation {
+  filter: saturate(70%);
+  -webkit-filter: saturate(70%);
+  -moz-filter: saturate(70%);
+  -o-filter: saturate(70%);
+  -ms-filter: saturate(70%);
+}
+
